@@ -1,0 +1,85 @@
+/* ------ CSS3 - JavaScript - Audio Visualizer 8 ------ */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --color-primary: hsla(0, 0%, 100%, 0.75); /* rgba(255, 215, 0, 1)  */
+  --color-blue: hsla(197, 100%, 49%, 0.75);
+  --color-purple: hsla(276, 100%, 27%, 0.75);
+  --color-green: hsla(118, 100%, 36%, 0.75);
+  /*---- Fonts ----*/
+  --fontfamily-primary: "Roboto", sans-serif;
+  --fontfamily-secondary: "Open Sans", sans-serif;
+}
+html {
+  /* 62.5% of 16px = 10px */
+  font-size: 62.5%;
+}
+#container {
+  background-color: #ffff00;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1200 800'%3E%3Cdefs%3E%3CradialGradient id='a' cx='0' cy='800' r='800' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23ff8000'/%3E%3Cstop offset='1' stop-color='%23ff8000' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='b' cx='1200' cy='800' r='800' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%2300ff19'/%3E%3Cstop offset='1' stop-color='%2300ff19' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='c' cx='600' cy='0' r='600' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%239900ff'/%3E%3Cstop offset='1' stop-color='%239900ff' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='d' cx='600' cy='800' r='600' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23ffff00'/%3E%3Cstop offset='1' stop-color='%23ffff00' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='e' cx='0' cy='0' r='800' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23FF0000'/%3E%3Cstop offset='1' stop-color='%23FF0000' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='f' cx='1200' cy='0' r='800' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%230CF'/%3E%3Cstop offset='1' stop-color='%230CF' stop-opacity='0'/%3E%3C/radialGradient%3E%3C/defs%3E%3Crect fill='url(%23a)' width='1200' height='800'/%3E%3Crect fill='url(%23b)' width='1200' height='800'/%3E%3Crect fill='url(%23c)' width='1200' height='800'/%3E%3Crect fill='url(%23d)' width='1200' height='800'/%3E%3Crect fill='url(%23e)' width='1200' height='800'/%3E%3Crect fill='url(%23f)' width='1200' height='800'/%3E%3C/svg%3E");
+  background-attachment: fixed;
+  background-size: cover;
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: -11;
+}
+#canvas1 {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0%;
+  z-index: -10;
+}
+@media screen and (min-width: 1024px) {
+  #canvas1 {
+    width: 75%;
+    left: 15%;
+  }
+}
+#title1 {
+  filter: drop-shadow(-1px 6px 3px rgba(0, 0, 0, 0.2));
+  font-family: var(--fontfamily-primary);
+  font-style: 400;
+  font-size: 4.5rem;
+  text-align: center;
+  margin-top: 2rem;
+  color: var(--color-primary);
+  user-select: none;
+}
+#audio1 {
+  width: 50%;
+  margin-top: 18rem;
+  margin-left: 25%;
+  margin-right: 25%;
+  border-inline-style: none;
+  display: block;
+}
+input {
+  position: absolute;
+  top: 250px;
+  margin-left: 25%;
+  margin-right: 25%;
+  z-index: 100;
+  color: var(--color-primary);
+  font-family: var(--fontfamily-secondary);
+  border-inline: none;
+  border: none;
+  border-radius: 5px;
+  font-style: 100;
+  font-size: 2.5rem;
+}
+#fileupload {
+  text-align: center;
+  padding: 0.4rem 0.6rem;
+  outline: 0;
+  border-radius: 5px;
+}
